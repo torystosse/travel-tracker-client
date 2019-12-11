@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Travel Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Travel Tracker</h1>
+  </header>
+
+  <section class="before-auth">
+    <form ID="sign-up">
+      <h4>Sign Up</h4>
+      <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+      <br />
+      <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+      <br />
+      <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password">
+      <br />
+      <button class="btn btn-secondary">Submit</button>
+    </form>
+    <hr>
+    <form ID="sign-in">
+      <h4>Sign In</h4>
+      <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+      <br />
+      <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+      <br />
+      <button class="btn btn-secondary">Submit</button>
+    </form>
+  </section>
+
+  <section class="after-auth account-actions">
+    <!-- <h3>Account Actions</h3> -->
+    <form ID="change-password">
+      <h4>Change Password</h4>
+      <input type="password" name="passwords[old]" class="inputs" placeholder="old password">
+      <br />
+      <input type="password" name="passwords[new]" class="inputs" placeholder="new password">
+      <br />
+      <button class="btn btn-secondary">Submit</button>
+    </form>
+    <hr>
+    <form ID="sign-out">
+      <h4>Sign Out</h4>
+      <button class="btn btn-danger">Sign Out</button>
+    </form>
+    <!-- <hr> -->
+  </section>
+  <hr>
+  <p ID="user-message"></p>
+
+  <main>
+    <div id="country-tracker" class="country-tracker"></div>
+  </main>
+</body>
+
 </html>
