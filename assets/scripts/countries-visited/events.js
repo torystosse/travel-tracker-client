@@ -1,6 +1,7 @@
 'use strict'
 
 const api = require('./api')
+const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onCreateTracker = event => {
@@ -26,9 +27,19 @@ const onAddTravels = event => {
     .catch(console.error)
 }
 
+const onViewTravels = event => {
+  event.preventDefault()
+  console.log('button click worked!')
+
+  api.viewTravels()
+    .then(ui.getTravelsSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = event => {
   $('.first-create').on('click', onCreateTracker)
   $('#create-tracker').on('submit', onAddTravels)
+  $('.view-countries').on('click', onViewTravels)
 }
 
 module.exports = {

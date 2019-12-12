@@ -14,6 +14,16 @@ const addTravels = formData => {
   })
 }
 
+const viewTravels = () => {
+  return $.ajax({
+    url: config.apiUrl + '/visited_countries',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 // const addTravels = (country, year) => {
 //   return $.ajax({
 //     url: config.apiUrl + '/visited_countries',
@@ -32,5 +42,6 @@ const addTravels = formData => {
 // }
 
 module.exports = {
-  addTravels
+  addTravels,
+  viewTravels
 }

@@ -1,6 +1,6 @@
 {{#each visited_countries as |visited_country|}}
   {{log visited_country}}
-  <section data-id="{{visited_country.id}}" class="book-listing">
+  <section data-id="{{visited_country.id}}">
     <h4>Country:</h4>
     <p>
       {{visited_country.country}}
@@ -11,7 +11,6 @@
     </p>
     <button class="btn btn-danger delete-country" data-id="{{visited_country.id}}">Remove</button>
     <button class="btn btn-info update-country" data-id="{{visited_country.id}}">Update</button>
-    <!-- {{> partial}} -->
   </section>
 
 {{/each}}
