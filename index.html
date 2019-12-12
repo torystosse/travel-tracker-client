@@ -60,7 +60,14 @@
   <hr>
   <p ID="user-message"></p>
 
-  <main>
+  <main class="after-auth">
+    <form ID="create-tracker">
+      <h3>Create your Travel Tracker!</h3>
+      <button class="btn btn-secondary">Create</button>
+      <input type="text" name="tracker[country]" class="inputs" placeholder="Name of Country">
+      <input type="number" name="tracker[year]" class="inputs" placeholder="Year Traveled">
+      <button class="btn btn-secondary">Submit</button>
+    </form>
     <div id="country-tracker" class="country-tracker"></div>
   </main>
 </body>
