@@ -24,6 +24,27 @@ const viewTravels = () => {
   })
 }
 
+const deleteCountry = id => {
+  return $.ajax({
+    url: config.apiUrl + '/visited_countries/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
+const updateCountry = (id, formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/visited_countries/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: formData
+  })
+}
+
 // const addTravels = (country, year) => {
 //   return $.ajax({
 //     url: config.apiUrl + '/visited_countries',
@@ -43,5 +64,7 @@ const viewTravels = () => {
 
 module.exports = {
   addTravels,
-  viewTravels
+  viewTravels,
+  deleteCountry,
+  updateCountry
 }

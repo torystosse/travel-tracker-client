@@ -20,7 +20,7 @@ const onAddTravels = event => {
   const form = event.target
   const formData = getFormFields(form)
 
-  console.log('form data is' + formData)
+  // console.log('form data is' + formData)
 
   api.addTravels(formData)
     .then(console.log)
@@ -29,17 +29,64 @@ const onAddTravels = event => {
 
 const onViewTravels = event => {
   event.preventDefault()
-  console.log('button click worked!')
+  // console.log('button click worked!')
 
   api.viewTravels()
     .then(ui.getTravelsSuccess)
     .catch(ui.failure)
 }
 
+const onDeleteCountry = event => {
+  event.preventDefault()
+  console.log('clicked onDeleteCountry')
+
+  const countryId = $(event.target).data('id')
+
+  api.deleteCountry(countryId)
+    .then(function () {
+      onViewTravels(event)
+    })
+    .catch(console.error)
+}
+
+// const onUpdateCountry = event => {
+//   event.preventDefault()
+//
+//   const countryId = $(event.target).data('id')
+//
+//   api.updateCountry(countryId)
+//     .then(function () {
+//       onViewTravels(event)
+//     })
+//     .catch(console.error)
+// }
+//
+
+const onUpdateCountry = event => {
+  event.preventDefault()
+
+  const countryId = $(event.target).data('id')
+
+  const form = event.target
+  const formData = getFormFields(form)
+
+  console.log('onUpdateCountry formData is ' + formData)
+  console.log(countryId)
+
+  api.updateCountry(countryId, formData)
+    .then(function () {
+      onViewTravels(event)
+    })
+    .catch(console.error)
+}
+
 const addHandlers = event => {
   $('.first-create').on('click', onCreateTracker)
   $('#create-tracker').on('submit', onAddTravels)
   $('.view-countries').on('click', onViewTravels)
+  $('#update-tracker').on('submit', onAddTravels)
+  $('.country-tracker').on('click', '.delete-country', onDeleteCountry)
+  $('.country-tracker').on('submit', '.update-country', onUpdateCountry)
 }
 
 module.exports = {

@@ -9,8 +9,12 @@
     <p>
       {{visited_country.year}}
     </p>
+    <form class="update-country" data-id="{{visited_country.id}}">
+      <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
+      <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+      <button class="btn btn-info">Update</button>
+    </form>
     <button class="btn btn-danger delete-country" data-id="{{visited_country.id}}">Remove</button>
-    <button class="btn btn-info update-country" data-id="{{visited_country.id}}">Update</button>
   </section>
 
 {{/each}}
