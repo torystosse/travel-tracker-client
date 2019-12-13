@@ -1,3 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import './useractions';
-@import './countrytracker'
+@import './countrytracker';
+
+* {
+  text-align: center;
+}
+
+body {
+  background-color: #f9f2ec;
+}

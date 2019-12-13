@@ -15,7 +15,23 @@
 
 <body>
   <header>
+    <!-- <nav>
+      <section class="before-auth">
+        <form class="dropdown-menu p-4" ID="sign-in">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" name="credentials[email]" class="form-control" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-secondary">Sign in</button>
+        </form>
+      </section> -->
+    <!-- </nav> -->
     <h1>Travel Tracker</h1>
+
   </header>
 
   <section class="before-auth">
@@ -76,14 +92,14 @@
         <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
         <button class="btn btn-secondary">Add your Travels</button>
       </form>
-    <hr>
+      <hr>
     </section>
     <!-- This button will view the exist tracker (onViewTracker) -->
     <section class="view-button">
       <button class="btn btn-secondary view-countries">View your Tracker</button>
       <hr>
     </section>
-    <div id="country-tracker" class="country-tracker"></div>
+    <div ID="country-tracker" class="country-tracker"></div>
     <hr>
     <!-- This form will update the existing tracker (onUpdateTracker) -->
     <section class="update-tracker-button">
