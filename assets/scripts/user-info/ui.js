@@ -30,6 +30,8 @@ const onSignInSuccess = responseData => {
   store.user = responseData.user
   onSuccess('You successfully signed in.')
   $('.after-auth').show()
+  $('.first-create').show()
+  $('.view-button').show()
   $('.before-auth').hide()
 }
 
@@ -48,8 +50,14 @@ const onChangePasswordFailure = () => {
 const onSignOutSuccess = () => {
   onSuccess('You successfully signed out.')
   // below, the store no longer knows who we are. delete the token.
+  store.user = {}
   $('.before-auth').show()
   $('.after-auth').hide()
+  $('.first-create').hide()
+  $('.view-button').hide()
+  $('.initial-add-button').hide()
+  $('.update-tracker-button').hide()
+  $('.country-tracker').hide()
   // console.log('everything is hidden')
 }
 

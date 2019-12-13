@@ -7,11 +7,9 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateTracker = event => {
   event.preventDefault()
 
-  // go to UI to show the form to create the tracker
-
-  // api.createTracker()
-  //   .then(console.log)
-  //   .catch(console.error)
+  $('.initial-add-button').show()
+  $('.first-create-button').hide()
+  console.log('clicked onCreateTracker')
 }
 
 const onAddTravels = event => {
@@ -22,8 +20,11 @@ const onAddTravels = event => {
 
   // console.log('form data is' + formData)
 
+  $('form').trigger('reset')
   api.addTravels(formData)
-    .then(console.log)
+    .then(function () {
+      onViewTravels(event)
+    })
     .catch(console.error)
 }
 
@@ -73,6 +74,7 @@ const onUpdateCountry = event => {
   console.log('onUpdateCountry formData is ' + formData)
   console.log(countryId)
 
+  $('form').trigger('reset')
   api.updateCountry(countryId, formData)
     .then(function () {
       onViewTravels(event)
@@ -81,7 +83,7 @@ const onUpdateCountry = event => {
 }
 
 const addHandlers = event => {
-  $('.first-create').on('click', onCreateTracker)
+  $('.first-create-button').on('click', onCreateTracker)
   $('#create-tracker').on('submit', onAddTravels)
   $('.view-countries').on('click', onViewTravels)
   $('#update-tracker').on('submit', onAddTravels)

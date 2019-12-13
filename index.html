@@ -60,31 +60,39 @@
   <hr>
   <p ID="user-message"></p>
 
-  <main class="after-auth content">
-    <h3>Create your Travel Tracker!</h3>
-    <!-- This button will create the initial tracker (onCreateTracker) BUT!! its
+  <main class="content">
+    <section class="first-create">
+      <h4>Create your Travel Tracker!</h4>
+      <!-- This button will create the initial tracker (onCreateTracker) BUT!! its
     purpose is not to "create a tracker", or make a call to the API, but rather,
     show the below form  -->
-    <button class="btn btn-secondary first-create">Create</button>
-    <hr>
+      <button class="btn btn-secondary first-create-button">Create</button>
+      <hr>
+    </section>
     <!-- This form will add initial travels to tracker (onAddTravels) -->
-    <form ID="create-tracker">
-      <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
-      <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
-      <button class="btn btn-secondary">Add your Travels</button>
-    </form>
+    <section class="initial-add-button">
+      <form ID="create-tracker" class="initial-tracker">
+        <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
+        <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+        <button class="btn btn-secondary">Add your Travels</button>
+      </form>
     <hr>
+    </section>
     <!-- This button will view the exist tracker (onViewTracker) -->
-    <button class="btn btn-secondary view-countries">View your Tracker</button>
-    <hr>
+    <section class="view-button">
+      <button class="btn btn-secondary view-countries">View your Tracker</button>
+      <hr>
+    </section>
     <div id="country-tracker" class="country-tracker"></div>
     <hr>
     <!-- This form will update the existing tracker (onUpdateTracker) -->
-    <form ID="update-tracker">
-      <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
-      <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
-      <button class="btn btn-secondary update">Add to your Tracker</button>
-    </form>
+    <section class="update-tracker-button">
+      <form ID="update-tracker" class="created-tracker-update">
+        <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
+        <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+        <button class="btn btn-secondary update">Add to your Tracker</button>
+      </form>
+    </section>
   </main>
 </body>
 
