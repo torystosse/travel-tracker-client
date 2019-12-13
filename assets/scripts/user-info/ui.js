@@ -32,6 +32,8 @@ const onSignInSuccess = responseData => {
   $('.after-auth').show()
   $('.first-create').show()
   $('.view-button').show()
+  $('.first-create-bucketlist').show()
+  $('.view-button-bucketlist').show()
   $('.before-auth').hide()
 }
 
@@ -58,6 +60,12 @@ const onSignOutSuccess = () => {
   $('.initial-add-button').hide()
   $('.update-tracker-button').hide()
   $('.country-tracker').hide()
+
+  $('.first-create-bucketlist').hide()
+  $('.view-button-bucketlist').hide()
+  $('.initial-add-button-bucketlist').hide()
+  $('.update-tracker-button-bucketlist').hide()
+  $('.country-tracker-bucketlist').hide()
   // console.log('everything is hidden')
 }
 
