@@ -39,9 +39,9 @@
     </p>
     <form ID="change-password" class="after-auth account-actions">
       <h4>Change Password</h4>
-      <input type="password" name="passwords[old]" class="inputs" placeholder="old password">
+      <input type="password" name="passwords[old]" class="inputs" placeholder="old password" required>
       <br />
-      <input type="password" name="passwords[new]" class="inputs" placeholder="new password">
+      <input type="password" name="passwords[new]" class="inputs" placeholder="new password" required>
       <br />
       <button class="btn btn-secondary">Submit</button>
     </form>
@@ -67,20 +67,20 @@
     <section class="before-auth">
       <form ID="sign-up">
         <h4>Sign Up</h4>
-        <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+        <input type="email" name="credentials[email]" class="inputs" placeholder="email" required>
         <br />
-        <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+        <input type="password" name="credentials[password]" class="inputs" placeholder="password" required>
         <br />
-        <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password" required>
         <br />
         <button class="btn btn-secondary">Submit</button>
       </form>
       <hr>
       <form ID="sign-in">
         <h4>Sign In</h4>
-        <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+        <input type="email" name="credentials[email]" class="inputs" placeholder="email" required>
         <br />
-        <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+        <input type="password" name="credentials[password]" class="inputs" placeholder="password" required>
         <br />
         <button class="btn btn-secondary">Submit</button>
       </form>
@@ -120,8 +120,8 @@
       <!-- This form will add initial travels to tracker (onAddTravels) -->
       <section class="initial-add-button">
         <form ID="create-tracker" class="initial-tracker">
-          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
-          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country" required>
+          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled" required>
           <button class="btn btn-secondary">Add your Travels</button>
         </form>
         <hr>
@@ -137,8 +137,8 @@
       <section class="update-tracker-button">
         <hr>
         <form ID="update-tracker" class="created-tracker-update">
-          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
-          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country" required>
+          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled" required>
           <button class="btn btn-secondary update">Add to your Tracker</button>
         </form>
         <hr>
@@ -159,8 +159,8 @@
     <!-- This form will add initial travels to tracker (onAddTravels) -->
     <section class="initial-add-button-bucketlist">
       <form ID="create-tracker-bucketlist" class="initial-tracker-bucketlist">
-        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country">
-        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank">
+        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country" required>
+        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank" required>
         <button class="btn btn-secondary">Add to your Bucket List</button>
       </form>
       <hr>
@@ -175,8 +175,8 @@
     <section class="update-tracker-button-bucketlist">
       <hr>
       <form ID="update-tracker-bucketlist" class="created-tracker-update-bucketlist">
-        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country">
-        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank">
+        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country" required>
+        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank" required>
         <button class="btn btn-secondary update-bucketlist">Add to your Bucketlist</button>
       </form>
     </section>

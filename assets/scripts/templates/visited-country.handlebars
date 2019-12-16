@@ -12,8 +12,8 @@
     </p>
     <!-- <button class="btn btn-info fake-update">Update</button> -->
     <form class="update-country" data-id="{{visited_country.id}}">
-      <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country">
-      <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled">
+      <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country" required>
+      <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled" required>
       <button class="btn btn-info real-update">Update</button>
     </form>
     <button class="btn btn-danger delete-country" data-id="{{visited_country.id}}">Remove</button>
