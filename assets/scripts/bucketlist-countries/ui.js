@@ -74,7 +74,7 @@ const createBucketListSuccess = message => {
 }
 
 const createBucketListFailure = message => {
-  onFailure('Oh no... something went wrong! Try again.')
+  onFailure("Oh no... something went wrong! Maybe you've already created a bucket list?")
 }
 
 const addTravelsSuccess = message => {

@@ -7,12 +7,30 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateTracker = event => {
   event.preventDefault()
 
-  $('.initial-add-button-bucketlist').show()
-  $('.first-create-button-bucketlist').hide()
-  $('.view-button-bucketlist').hide()
-  console.log('clicked onCreateTracker')
+  // $('.initial-add-button-bucketlist').show()
+  // $('.first-create-button-bucketlist').hide()
+  // $('.view-button-bucketlist').hide()
+  // console.log('clicked onCreateTracker')
+  //
+  // ui.createBucketListSuccess()
 
-  ui.createBucketListSuccess()
+  api.viewTravels()
+    .then(function (data) {
+      hasTravels(data)
+    })
+}
+
+const hasTravels = (data) => {
+  console.log('from hasTravels: ', data.bucketlist_countries)
+  if (data.bucketlist_countries.length !== 0) {
+    ui.createBucketListFailure()
+  } else {
+    ui.createBucketListSuccess()
+    $('.initial-add-button-bucketlist').show()
+    $('.first-create-button-bucketlist').hide()
+    $('.view-button-bucketlist').hide()
+    console.log('clicked onCreateTracker')
+  }
 }
 
 const onAddTravels = event => {
