@@ -41,6 +41,19 @@ const onViewTravels = event => {
     .catch(ui.getTravelsFailure)
 }
 
+const onViewTravelsNoMessage = event => {
+  event.preventDefault()
+  // console.log('button click worked!')
+
+  // $('.update-country').hide()
+  $('.view-button').hide()
+  api.viewTravels()
+    .then(ui.getTravelsSuccessNoMessage)
+    .catch(ui.getTravelsFailure)
+
+  // countryCount()
+}
+
 const onDeleteCountry = event => {
   event.preventDefault()
   console.log('clicked onDeleteCountry')
@@ -49,7 +62,7 @@ const onDeleteCountry = event => {
 
   api.deleteCountry(countryId)
     .then(function () {
-      onViewTravels(event)
+      onViewTravelsNoMessage(event)
     })
     .then(ui.deleteCountrySuccess)
     .catch(ui.deleteCountryFailure)
@@ -82,7 +95,7 @@ const onUpdateCountry = event => {
   $('form').trigger('reset')
   api.updateCountry(countryId, formData)
     .then(function () {
-      onViewTravels(event)
+      onViewTravelsNoMessage(event)
     })
     .then(ui.updateCountrySuccess)
     .catch(ui.updateCountryFailure)

@@ -40,6 +40,23 @@ const getTravelsSuccess = (data) => {
   }
 }
 
+const getTravelsSuccessNoMessage = (data) => {
+  if (data.bucketlist_countries.length < 1) {
+    $('.country-tracker-bucketlist').hide()
+    onFailure('Oh no... there are no countries here! Create your bucket list first.')
+  } else {
+    console.log(data)
+    const showTrackerHtml = showBucketlistCountryTemplate({
+      bucketlist_countries: data.bucketlist_countries
+    })
+    $('.country-tracker-bucketlist').html(showTrackerHtml)
+    $('.country-tracker-bucketlist').show()
+    $('.first-create-bucketlist').hide()
+    $('.initial-add-button-bucketlist').hide()
+    $('.update-tracker-button-bucketlist').show()
+  }
+}
+
 // const failure = (error) => {
 //   console.error(error)
 // }
@@ -69,7 +86,7 @@ const addTravelsFailure = message => {
 }
 
 const deleteCountrySuccess = message => {
-  onSuccess('You deleted a country, hope you got to visit it.')
+  onSuccess('You deleted a country, hope you got to visit it!')
 }
 
 const deleteCountryFailure = message => {
@@ -88,6 +105,7 @@ const updateCountryFailure = message => {
 
 module.exports = {
   getTravelsSuccess,
+  getTravelsSuccessNoMessage,
   getTravelsFailure,
   createBucketListSuccess,
   createBucketListFailure,

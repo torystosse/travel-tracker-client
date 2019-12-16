@@ -2,18 +2,41 @@
 
 const api = require('./api')
 const ui = require('./ui')
+// const handlebars = require('../templates/visited-country.handlebars')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onCreateTracker = event => {
   event.preventDefault()
 
-  $('.initial-add-button').show()
-  $('.first-create-button').hide()
-  $('.view-button').hide()
-  console.log('clicked onCreateTracker')
-
   // need to create below
-  ui.createTrackerSuccess()
+  // if (handlebars.visited_countries !== '') {
+  //   ui.createTrackerFailure()
+  //   console.log('failure')
+  // } else {
+  //   ui.createTrackerSuccess()
+  //   $('.initial-add-button').show()
+  //   $('.first-create-button').hide()
+  //   $('.view-button').hide()
+  //   console.log('clicked onCreateTracker')
+  // }
+
+  api.viewTravels()
+    .then(function (data) {
+      hasTravels(data)
+    })
+}
+
+const hasTravels = (data) => {
+  console.log('from hasTravels: ', data.visited_countries)
+  if (data.visited_countries.length !== 0) {
+    ui.createTrackerFailure()
+  } else {
+    ui.createTrackerSuccess()
+    $('.initial-add-button').show()
+    $('.first-create-button').hide()
+    $('.view-button').hide()
+    console.log('clicked onCreateTracker')
+  }
 }
 
 // below, trying to find number of countries visited.
@@ -65,6 +88,19 @@ const onViewTravels = event => {
   // countryCount()
 }
 
+const onViewTravelsNoMessage = event => {
+  event.preventDefault()
+  // console.log('button click worked!')
+
+  // $('.update-country').hide()
+  $('.view-button').hide()
+  api.viewTravels()
+    .then(ui.getTravelsSuccessNoMessage)
+    .catch(ui.getTravelsFailure)
+
+  // countryCount()
+}
+
 const onDeleteCountry = event => {
   event.preventDefault()
   console.log('clicked onDeleteCountry')
@@ -73,7 +109,7 @@ const onDeleteCountry = event => {
 
   api.deleteCountry(countryId)
     .then(function () {
-      onViewTravels(event)
+      onViewTravelsNoMessage(event)
     })
     .then(ui.deleteCountriesSuccess)
     .catch(ui.deleteCountriesFailure)
@@ -106,7 +142,7 @@ const onUpdateCountry = event => {
   $('form').trigger('reset')
   api.updateCountry(countryId, formData)
     .then(function () {
-      onViewTravels(event)
+      onViewTravelsNoMessage(event)
     })
     .then(ui.updateCountrySuccess)
     .catch(ui.updateCountryFailure)

@@ -81,6 +81,7 @@ const onSignOutSuccess = () => {
   $('.initial-add-button').hide()
   $('.update-tracker-button').hide()
   $('.country-tracker').hide()
+  $('#country-count').hide()
 
   $('.first-create-bucketlist').hide()
   $('.view-button-bucketlist').hide()
