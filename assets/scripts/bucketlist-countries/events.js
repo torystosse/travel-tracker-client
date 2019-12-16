@@ -9,6 +9,7 @@ const onCreateTracker = event => {
 
   $('.initial-add-button-bucketlist').show()
   $('.first-create-button-bucketlist').hide()
+  $('.view-button-bucketlist').hide()
   console.log('clicked onCreateTracker')
 }
 
@@ -19,7 +20,7 @@ const onAddTravels = event => {
   const formData = getFormFields(form)
 
   // console.log('form data is' + formData)
-
+  $('.view-button-bucketlist').hide()
   $('form').trigger('reset')
   api.addTravels(formData)
     .then(function () {
@@ -31,7 +32,7 @@ const onAddTravels = event => {
 const onViewTravels = event => {
   event.preventDefault()
   // console.log('button click worked!')
-
+  $('.view-button-bucketlist').hide()
   api.viewTravels()
     .then(ui.getTravelsSuccess)
     .catch(ui.failure)

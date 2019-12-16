@@ -1,0 +1,43 @@
+body {
+  background-image: url('https://www.tynker.com/projects/images/aa95a99a27cfc02affe951c8a9e97fbece6f2783/background-scene---drawing1.png');
+  background-size: cover;
+  // background-color: #f9f2ec;
+  display: flex;
+  flex-flow: row wrap;
+  // margin: 0 auto;
+  align-items: flex-start;
+  align-content: center;
+  align-self: center;
+  // justify-content: center;
+  justify-content: space-around;
+}
+
+// .before-auth {
+//   flex: 1 100%;
+// }
+
+.header {
+  // border: 1px black solid;
+  flex: 1 100%;
+  text-align: center;
+}
+
+.bucket-list {
+  // flex: 1 50%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.travel-tracker {
+  // flex: 1 50%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.user-actions {
+  // border: 1px black solid;
+  flex: 1 100%;
+  margin: 0 auto;
+  // max-width: 900px;
+  padding-top: 20px;
+}

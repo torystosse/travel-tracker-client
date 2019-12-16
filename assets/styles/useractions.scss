@@ -10,6 +10,51 @@
   font-size: 1em;
 }
 
-.after-auth {
+// .after-auth {
+//   display: none;
+// }
+
+.nav {
+  background-color: #595959;
+  border: 1px solid #595959;
+  box-shadow: 0px 5px 5px 0px black;
+  // margin: 10px;
+  // margin-bottom: 20px;
+  padding: 10px;
+}
+
+.instruction-text {
   display: none;
+  background: white;
+  color: #333333;
+  padding: 10px;
+  line-height: 25px;
+  text-align: justify;
+  bottom: 0;
+  margin: 0;
+}
+//
+// .show-description p {
+//   height: 100px;
+// }
+
+.change-pw {
+  box-shadow: 2px 2px 2px black;
+  display: none;
+  margin-left: 40px;
+}
+
+.instructions {
+  box-shadow: 2px 2px 2px black;
+}
+
+#sign-out {
+  box-shadow: 2px 2px 2px black;
+  display: none;
+  margin-left: 40px;
+}
+
+#change-password {
+  display: none;
+  margin-top: 20px;
 }

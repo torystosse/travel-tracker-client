@@ -48,11 +48,21 @@ const onSignOut = event => {
     .catch(ui.onSignOutFailure)
 }
 
+const onShowInstructions = () => {
+  $('.instruction-text').toggle()
+}
+
+const onShowChangePassword = () => {
+  $('#change-password').toggle()
+}
+
 const addHandlers = event => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('.instructions').on('click', onShowInstructions)
+  $('.change-pw').on('click', onShowChangePassword)
 }
 
 module.exports = {

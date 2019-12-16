@@ -29,13 +29,30 @@ const onSignUpFailure = () => {
 const onSignInSuccess = responseData => {
   store.user = responseData.user
   onSuccess('You successfully signed in.')
-  $('.after-auth').show()
+  $('.change-pw').show()
+  $('#sign-out').show()
+  // $('.after-auth').show()
   $('.first-create').show()
   $('.view-button').show()
   $('.first-create-bucketlist').show()
   $('.view-button-bucketlist').show()
+  $('.first-create-button').show()
+  $('.first-create-button-bucketlist').show()
   $('.before-auth').hide()
 }
+// below does not work, but the idea is... if the user does not have visited
+// countries, then show option to create the tracker. If user does have visited
+// countries, then do not show option to create the tracker.
+
+//   if (store.user.visited_countries === {}) {
+//     console.log('there are no countries here')
+//     $('.first-create-button').show()
+//   } else {
+//     console.log('there are indeed countries here')
+//     console.log(store)
+//     $('.first-create-button').hide()
+//   }
+// }
 
 const onSignInFailure = () => {
   onFailure('Uh oh... something went wrong! Try again.')
