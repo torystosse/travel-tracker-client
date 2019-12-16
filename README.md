@@ -74,6 +74,10 @@ In future iterations, I would:
 - I would like to make both tracker sections more user friendly.
 - I would consider making it so a user can't create bucket list items with the same rank.
 - I would make the application more mobile-friendly.
+- Create an auto log in when the user signs up
+- Create messaging if the user fails to sign up, i.e.
+  - If the user tries to create an account with an email that already exists in
+    the system, throw an error stating that email exists, please sign in.
 
 
 
