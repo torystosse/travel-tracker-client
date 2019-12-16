@@ -27,7 +27,7 @@ const getTravelsSuccess = (data) => {
     $('.country-tracker-bucketlist').hide()
     onFailure('Oh no... there are no countries here! Create your bucket list first.')
   } else {
-    console.log(data)
+    // console.log(data)
     const showTrackerHtml = showBucketlistCountryTemplate({
       bucketlist_countries: data.bucketlist_countries
     })
@@ -45,7 +45,7 @@ const getTravelsSuccessNoMessage = (data) => {
     $('.country-tracker-bucketlist').hide()
     onFailure('Oh no... there are no countries here! Create your bucket list first.')
   } else {
-    console.log(data)
+    // console.log(data)
     const showTrackerHtml = showBucketlistCountryTemplate({
       bucketlist_countries: data.bucketlist_countries
     })

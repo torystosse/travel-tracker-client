@@ -28,8 +28,8 @@ const getTravelsSuccess = (data) => {
     $('.country-tracker').hide()
     onFailure('Oh no... there are no countries here! Create your tracker first.')
   } else {
-    console.log('you have countries - yay!')
-    console.log(data)
+    // console.log('you have countries - yay!')
+    // console.log(data)
     const showTrackerHtml = showVisitedCountryTemplate({ visited_countries: data.visited_countries })
     countryCount.show()
     countryCount.html("You've visited " + data.visited_countries.length + '/195 countries! Keep it up!')
@@ -47,8 +47,8 @@ const getTravelsSuccessNoMessage = (data) => {
     $('.country-tracker').hide()
     onFailure('Oh no... there are no countries here! Create your tracker first.')
   } else {
-    console.log('you have countries - yay!')
-    console.log(data)
+    // console.log('you have countries - yay!')
+    // console.log(data)
     const showTrackerHtml = showVisitedCountryTemplate({ visited_countries: data.visited_countries })
     countryCount.html("You've visited " + data.visited_countries.length + '/195 countries! Keep it up!')
     $('.country-tracker').html(showTrackerHtml)

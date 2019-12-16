@@ -21,7 +21,7 @@ const onCreateTracker = event => {
 }
 
 const hasTravels = (data) => {
-  console.log('from hasTravels: ', data.bucketlist_countries)
+  // console.log('from hasTravels: ', data.bucketlist_countries)
   if (data.bucketlist_countries.length !== 0) {
     ui.createBucketListFailure()
   } else {
@@ -29,7 +29,7 @@ const hasTravels = (data) => {
     $('.initial-add-button-bucketlist').show()
     $('.first-create-button-bucketlist').hide()
     $('.view-button-bucketlist').hide()
-    console.log('clicked onCreateTracker')
+    // console.log('clicked onCreateTracker')
   }
 }
 
@@ -74,7 +74,7 @@ const onViewTravelsNoMessage = event => {
 
 const onDeleteCountry = event => {
   event.preventDefault()
-  console.log('clicked onDeleteCountry')
+  // console.log('clicked onDeleteCountry')
 
   const countryId = $(event.target).data('id')
 
@@ -107,8 +107,8 @@ const onUpdateCountry = event => {
   const form = event.target
   const formData = getFormFields(form)
 
-  console.log('onUpdateCountry formData is ' + formData)
-  console.log(countryId)
+  // console.log('onUpdateCountry formData is ' + formData)
+  // console.log(countryId)
 
   $('form').trigger('reset')
   api.updateCountry(countryId, formData)

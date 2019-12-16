@@ -27,7 +27,7 @@ const onCreateTracker = event => {
 }
 
 const hasTravels = (data) => {
-  console.log('from hasTravels: ', data.visited_countries)
+  // console.log('from hasTravels: ', data.visited_countries)
   if (data.visited_countries.length !== 0) {
     ui.createTrackerFailure()
   } else {
@@ -35,7 +35,7 @@ const hasTravels = (data) => {
     $('.initial-add-button').show()
     $('.first-create-button').hide()
     $('.view-button').hide()
-    console.log('clicked onCreateTracker')
+    // console.log('clicked onCreateTracker')
   }
 }
 
@@ -103,7 +103,7 @@ const onViewTravelsNoMessage = event => {
 
 const onDeleteCountry = event => {
   event.preventDefault()
-  console.log('clicked onDeleteCountry')
+  // console.log('clicked onDeleteCountry')
 
   const countryId = $(event.target).data('id')
 
@@ -136,8 +136,8 @@ const onUpdateCountry = event => {
   const form = event.target
   const formData = getFormFields(form)
 
-  console.log('onUpdateCountry formData is ' + formData)
-  console.log(countryId)
+  // console.log('onUpdateCountry formData is ' + formData)
+  // console.log(countryId)
 
   $('form').trigger('reset')
   api.updateCountry(countryId, formData)
