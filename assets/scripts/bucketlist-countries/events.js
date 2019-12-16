@@ -11,6 +11,8 @@ const onCreateTracker = event => {
   $('.first-create-button-bucketlist').hide()
   $('.view-button-bucketlist').hide()
   console.log('clicked onCreateTracker')
+
+  ui.createBucketListSuccess()
 }
 
 const onAddTravels = event => {
@@ -26,7 +28,8 @@ const onAddTravels = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.addTravelsSuccess)
+    .catch(ui.addTravelsFailure)
 }
 
 const onViewTravels = event => {
@@ -35,7 +38,7 @@ const onViewTravels = event => {
   $('.view-button-bucketlist').hide()
   api.viewTravels()
     .then(ui.getTravelsSuccess)
-    .catch(ui.failure)
+    .catch(ui.getTravelsFailure)
 }
 
 const onDeleteCountry = event => {
@@ -48,7 +51,8 @@ const onDeleteCountry = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.deleteCountrySuccess)
+    .catch(ui.deleteCountryFailure)
 }
 
 // const onUpdateCountry = event => {
@@ -80,7 +84,8 @@ const onUpdateCountry = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.updateCountrySuccess)
+    .catch(ui.updateCountryFailure)
 }
 
 const addHandlers = event => {

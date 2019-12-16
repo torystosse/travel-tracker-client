@@ -11,6 +11,9 @@ const onCreateTracker = event => {
   $('.first-create-button').hide()
   $('.view-button').hide()
   console.log('clicked onCreateTracker')
+
+  // need to create below
+  ui.createTrackerSuccess()
 }
 
 // below, trying to find number of countries visited.
@@ -43,7 +46,10 @@ const onAddTravels = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.addTravelsSuccess)
+    .catch(ui.addTravelsFailure)
+
+    // need to add above uis
 }
 
 const onViewTravels = event => {
@@ -54,7 +60,7 @@ const onViewTravels = event => {
   $('.view-button').hide()
   api.viewTravels()
     .then(ui.getTravelsSuccess)
-    .catch(ui.failure)
+    .catch(ui.getTravelsFailure)
 
   // countryCount()
 }
@@ -69,7 +75,8 @@ const onDeleteCountry = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.deleteCountriesSuccess)
+    .catch(ui.deleteCountriesFailure)
 }
 
 // const onUpdateCountry = event => {
@@ -101,7 +108,8 @@ const onUpdateCountry = event => {
     .then(function () {
       onViewTravels(event)
     })
-    .catch(console.error)
+    .then(ui.updateCountrySuccess)
+    .catch(ui.updateCountryFailure)
 }
 
 // const onShowUpdate = event => {
