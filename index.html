@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Oh, the Places You've Been!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&" rel="stylesheet">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <button class="btn btn-info instructions"> Instructions </button>
+      <button class="btn btn-info change-pw after-auth"> Change Password </button>
+      <form ID="sign-out" class="after-auth account-actions">
+        <button class="btn btn-danger sign-out">Sign Out</button>
+      </form>
+    </nav>
+    <p class="instruction-text">
+      Welcome to 'Oh, the Places You've Been!', your new travel tracker. To get
+      started, click 'sign up', and then you can go ahead and sign in. If you haven't
+      created your tracker yet, you can click on 'create' under 'Create your Travel Tracker'.
+      Once you add your first country, then boom! your tracker has been created. You
+      can continue to add countries to your tracker from there. Once you're all set,
+      you can sign on out. Next time you log in, feel free to click 'View your Tracker'
+      and your list will be saved from there! You also have the option to create a
+      bucket list - the next countries on your list. You can rank countries, and while
+      you have the option to give them the same rank, I wouldn't do that unless you're
+      planning a crazy trip to many countries, in which case, good for you. Feel free
+      to update or delete any of the countries on either list (not that you would ever
+      delete one... I hope?) Happy travels!   ***Note: please don't use any real account info.***
+    </p>
+    <form ID="change-password" class="after-auth account-actions">
+      <h4>Change Password</h4>
+      <input type="password" name="passwords[old]" class="inputs" placeholder="old password" required>
+      <br />
+      <input type="password" name="passwords[new]" class="inputs" placeholder="new password" required>
+      <br />
+      <button class="btn btn-secondary">Submit</button>
+    </form>
+    <!-- <nav>
+      <section class="before-auth">
+        <form class="dropdown-menu p-4" ID="sign-in">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" name="credentials[email]" class="form-control" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-secondary">Sign in</button>
+        </form>
+      </section> -->
+    <!-- </nav> -->
+    <h1>Oh, the Places You've Been!</h1>
+
+  </header>
+  <section class="user-actions">
+    <section class="before-auth">
+
+      <!-- <form ID="sign-up">
+        <h4>Sign Up</h4>
+        <div class="form-group">
+          <label for="inputEmail1">Email address</label>
+          <input type="email" name="credentials[email]" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="example@example" required>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword1">Password</label>
+          <input type="password" name="credentials[password]" class="form-control" id="inputPassword1" placeholder="password" required>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword2">Password</label>
+          <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form> -->
+
+
+      <form ID="sign-up">
+        <h4>Sign Up</h4>
+        <input type="email" name="credentials[email]" class="inputs" placeholder="email" required>
+        <br />
+        <input type="password" name="credentials[password]" class="inputs" placeholder="password" required>
+        <br />
+        <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password" required>
+        <br />
+        <button class="btn btn-secondary">Submit</button>
+      </form>
+      <hr>
+      <form ID="sign-in">
+        <h4>Sign In</h4>
+        <input type="email" name="credentials[email]" class="inputs" placeholder="email" required>
+        <br />
+        <input type="password" name="credentials[password]" class="inputs" placeholder="password" required>
+        <br />
+        <button class="btn btn-secondary">Submit</button>
+      </form>
+    </section>
+
+    <!-- <aside class="after-auth account-actions">
+      <h3>Account Actions</h3>
+      <form ID="change-password" class="after-auth account-actions">
+        <h4>Change Password</h4>
+        <input type="password" name="passwords[old]" class="inputs" placeholder="old password">
+        <br />
+        <input type="password" name="passwords[new]" class="inputs" placeholder="new password">
+        <br />
+        <button class="btn btn-secondary">Submit</button>
+      </form>
+      <!<form ID="sign-out">
+        <h4>Sign Out</h4>
+        <button class="btn btn-danger">Sign Out</button>
+      </form> -->
+      <!-- <hr> -->
+    <!-- </aside> -->
+    <hr>
+    <p ID="user-message"></p>
+  </section>
+
+  <main class="content">
+    <p ID="country-count"></p>
+    <section class="travel-tracker">
+      <section class="first-create">
+        <h4>Create your Travel Tracker!</h4>
+        <!-- This button will create the initial tracker (onCreateTracker) BUT!! its
+    purpose is not to "create a tracker", or make a call to the API, but rather,
+    show the below form  -->
+        <button class="btn btn-secondary first-create-button">Create</button>
+        <hr>
+      </section>
+      <!-- This form will add initial travels to tracker (onAddTravels) -->
+      <section class="initial-add-button">
+        <form ID="create-tracker" class="initial-tracker">
+          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country" required>
+          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled" required>
+          <button class="btn btn-secondary">Add your Travels</button>
+        </form>
+        <hr>
+      </section>
+      <!-- This button will view the exist tracker (onViewTracker) -->
+      <section class="view-button">
+        <button class="btn btn-secondary view-countries">View your Tracker</button>
+        <!-- <div class="country-count"></div> -->
+        <hr>
+      </section>
+      <div ID="country-tracker" class="country-tracker"></div>
+      <!-- This form will update the existing tracker (onUpdateTracker) -->
+      <section class="update-tracker-button">
+        <hr>
+        <form ID="update-tracker" class="created-tracker-update">
+          <input type="text" name="visited_country[country]" class="inputs" placeholder="Name of Country" required>
+          <input type="number" name="visited_country[year]" class="inputs" placeholder="Year Traveled" required>
+          <button class="btn btn-secondary update">Add to your Tracker</button>
+        </form>
+        <hr>
+      </section>
+    </section>
+
+  </main>
+
+  <aside class="bucket-list">
+    <section class="first-create-bucketlist">
+      <h4>Create your Travel Bucket List!</h4>
+      <!-- This button will create the initial tracker (onCreateTracker) BUT!! its
+      purpose is not to "create a tracker", or make a call to the API, but rather,
+      show the below form  -->
+      <button class="btn btn-secondary first-create-button-bucketlist">Create</button>
+      <hr>
+    </section>
+    <!-- This form will add initial travels to tracker (onAddTravels) -->
+    <section class="initial-add-button-bucketlist">
+      <form ID="create-tracker-bucketlist" class="initial-tracker-bucketlist">
+        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country" required>
+        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank" required>
+        <button class="btn btn-secondary">Add to your Bucket List</button>
+      </form>
+      <hr>
+    </section>
+    <!-- This button will view the exist tracker (onViewTracker) -->
+    <section class="view-button-bucketlist">
+      <button class="btn btn-secondary view-countries-bucketlist">View your Bucket List</button>
+      <hr>
+    </section>
+    <div ID="country-tracker-bucketlist" class="country-tracker-bucketlist"></div>
+    <!-- This form will update the existing tracker (onUpdateTracker) -->
+    <section class="update-tracker-button-bucketlist">
+      <hr>
+      <form ID="update-tracker-bucketlist" class="created-tracker-update-bucketlist">
+        <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country" required>
+        <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank" required>
+        <button class="btn btn-secondary update-bucketlist">Add to your Bucketlist</button>
+      </form>
+    </section>
+  </aside>
+
+</body>
+
+</html>
