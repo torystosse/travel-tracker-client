@@ -79,7 +79,6 @@ const onViewTravels = event => {
   event.preventDefault()
   // console.log('button click worked!')
 
-  // $('.update-country').hide()
   $('.view-button').hide()
   api.viewTravels()
     .then(ui.getTravelsSuccess)
@@ -92,7 +91,6 @@ const onViewTravelsNoMessage = event => {
   event.preventDefault()
   // console.log('button click worked!')
 
-  // $('.update-country').hide()
   $('.view-button').hide()
   api.viewTravels()
     .then(ui.getTravelsSuccessNoMessage)
@@ -148,13 +146,14 @@ const onUpdateCountry = event => {
     .catch(ui.updateCountryFailure)
 }
 
-// const onShowUpdate = event => {
+// const onShowEdit = event => {
 //   event.preventDefault()
+//
+//   const countryId = $(event.target).data('id')
 //
 //   console.log('hiding this button')
 //
-//   $('.update-country').show()
-//   $('.fake-update').hide()
+//   ui.showEdit(countryId)
 // }
 
 const addHandlers = event => {
@@ -164,7 +163,7 @@ const addHandlers = event => {
   $('#update-tracker').on('submit', onAddTravels)
   $('.country-tracker').on('click', '.delete-country', onDeleteCountry)
   $('.country-tracker').on('submit', '.update-country', onUpdateCountry)
-  // $('.country-tracker').on('click', '.fake-update', onShowUpdate)
+  // $('.country-tracker').on('click', '.edit-button', onShowEdit)
 }
 
 module.exports = {
