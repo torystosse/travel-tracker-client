@@ -102,6 +102,12 @@ const updateCountryFailure = message => {
 // $('.initial-tracker').show()
 // $('.created-tracker-update').show()
 
+// const showEdit = countryId => {
+//   // do something with the countryId? so it only shows that one country's update?
+//   $('.update-country').show()
+//   $('.edit-button').hide()
+// }
+
 module.exports = {
   getTravelsSuccess,
   getTravelsSuccessNoMessage,
@@ -112,6 +118,7 @@ module.exports = {
   addTravelsFailure,
   deleteCountriesSuccess,
   deleteCountriesFailure,
+  // showEdit,
   updateCountrySuccess,
   updateCountryFailure
 }

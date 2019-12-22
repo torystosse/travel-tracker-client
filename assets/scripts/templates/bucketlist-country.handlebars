@@ -1,15 +1,9 @@
 <h4>Bucket List</h4>
 {{#each bucketlist_countries as |bucketlist_country|}}
-
   <section data-id="{{bucketlist_country.id}}">
-    <h5>Rank of Country:</h5>
-    <p>
-      {{bucketlist_country.rank}}
-    </p>
-    <h5>Country:</h5>
-    <p>
-      {{bucketlist_country.name}}
-    </p>
+    <p><span class="list">Rank of Country:</span> {{bucketlist_country.rank}}</p>
+    <p><span class="list">Country:</span> {{bucketlist_country.name}}</p>
+    <!-- <img src="../../../img/edit.png" alt="edit"> -->
     <form class="update-country-bucketlist" data-id="{{bucketlist_country.id}}">
       <input type="number" name="bucketlist_country[rank]" class="inputs" placeholder="Bucket List Rank" required>
       <input type="text" name="bucketlist_country[name]" class="inputs" placeholder="Name of Country" required>
@@ -17,5 +11,6 @@
     </form>
     <button class="btn btn-danger delete-country-bucketlist" data-id="{{bucketlist_country.id}}">Remove</button>
   </section>
+  <hr>
 
 {{/each}}
